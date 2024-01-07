@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Tracker</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Task Tracker</h2>
+
+  <table>
+    <tr>
+      <th>Day</th>
+      <th>Task 1</th>
+      <th>Task 2</th>
+      <th>Task 3</th>
+      <th>Task 4</th>
+      <th>Task 5</th>
+      <th>Task 6</th>
+      <th>Task 7</th>
+      <th>Task 8</th>
+      <th>Task 9</th>
+      <th>Task 10</th>
+      <th>Task 11</th>
+    </tr>
+
+    <!-- Repeat this row for each day -->
+    <!-- You can customize the number of days in the loop -->
+    <!-- Here, I've set it to 20 -->
+    <!-- Also, you can customize the checkbox IDs and labels -->
+
+    <!-- Use a loop to generate rows for each day -->
+    <!-- You can customize the number of days in the loop -->
+    <!-- Here, I've set it to 20 -->
+    <?php
+      for ($day = 1; $day <= 20; $day++) {
+        echo "<tr>";
+        echo "<td>Day $day</td>";
+
+        for ($task = 1; $task <= 11; $task++) {
+          $checkboxId = "day{$day}_task{$task}";
+          echo "<td><input type='checkbox' id='$checkboxId'> <label for='$checkboxId'>Task $task</label></td>";
+        }
+
+        echo "</tr>";
+      }
+    ?>
+  </table>
+
+</body>
+</html>
